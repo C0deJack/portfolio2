@@ -15,9 +15,9 @@ export const lightTheme = {
     secondary: '#E21266',
     warning: '#FCDA00',
     info: '#00CCC6',
-    background: '#eaeaea',
+    background: '#f2f2f2',
     foreground: '#282828',
-    grey: '#bdbdbd',
+    grey: '#535353',
     muted: '#eee',
   }
 };
@@ -33,7 +33,7 @@ export const darkTheme = {
     info: '#00CCC6',
     background: '#191b27',
     foreground: '#fff',
-    grey: '#6e6e6e',
+    grey: '#a9afc3;',
     muted: '#eee',
   }
 };

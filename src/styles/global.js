@@ -27,13 +27,32 @@ export const GlobalStyles = createGlobalStyle`
 	
 	background-color: ${props => props.theme.color.background};
 	color: ${props => props.theme.color.foreground};
-}
+    }
 
-/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap'); */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
 
-h1, h2, h3, h4, h5, h6 {
+    h1, h2, h3, h4, h5, h6 {
 		font-family: "Poppins", sans-serif;
 		color: ${props => props.theme.color.foreground};
-		font-weight: 700;
+		font-weight: 700 !important;
 	}
+
+    .h1 {
+        font-size: 80px;
+    }
+
+    .dot {
+        display: inline-block;
+        background-color: ${props => props.theme.color.primary};
+        width: 20px;
+        height: 20px;
+        -webkit-border-radius: 100px;
+        -moz-border-radius: 100px;
+        -ms-border-radius: 100px;
+        -o-border-radius: 100px;
+        border-radius: 100px;
+        position: relative;
+        left: 6px;
+        bottom: -3px;
+    }
 `;
