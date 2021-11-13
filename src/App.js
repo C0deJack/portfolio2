@@ -13,16 +13,18 @@ export default function App() {
     return (
       <ThemeProvider>
           <GlobalStyles />
-            <Header /> 
-            <Router>
-                <Routes>
-                    <Route path="/" element={<Home/>} />
-                    <Route path={'/one'} element={<PageOne/>} />
-                    <Route path={'/two'} element={<PageTwo/>} />
-                    <Route element={<Home/>} />
-                </Routes>
-                <StyledFooter />
-            </Router>
+            <div className="heroImage">
+                <Header /> 
+                <Router>
+                    <Routes>
+                        <Route path="/" element={<Home/>} />
+                        <Route path={'/one'} element={<PageOne/>} />
+                        <Route path={'/two'} element={<PageTwo/>} />
+                        <Route element={<Home/>} />
+                    </Routes>
+                    <StyledFooter />
+                </Router>
+            </div>
         </ThemeProvider>
     );
 }

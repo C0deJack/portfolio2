@@ -55,4 +55,11 @@ export const GlobalStyles = createGlobalStyle`
         left: 6px;
         bottom: -3px;
     }
+
+    .heroImage {
+        background: url(${props => props.theme.backgroundImage}) ${props => props.theme.color.background};
+        background-repeat: no-repeat;
+        background-position: top right;
+        background-size: cover;
+    }
 `;

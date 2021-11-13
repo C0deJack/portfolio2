@@ -2,6 +2,7 @@ import styled, { keyframes } from 'styled-components';
 import { fadeInUp } from 'react-animations';
 import { Cta } from '../styled/Cta';
 
+
 const fadeInUpAnimation = keyframes`${fadeInUp}`;
 
 const StyledHome = styled.section`

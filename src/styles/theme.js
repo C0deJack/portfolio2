@@ -1,5 +1,8 @@
 // ====== All brand colors and brand specific styling should live here ====== //
 
+import lightBg from '../assets/backgrounds/light-bg.png';
+import darkBg from '../assets/backgrounds/flowers.jpg';
+
 export const lightTheme = {
   all: {
     borderRadius: '0.5rem',
@@ -19,7 +22,8 @@ export const lightTheme = {
     foreground: '#282828',
     grey: '#535353',
     muted: '#eee',
-  }
+  }, 
+  backgroundImage: lightBg
 };
 
 
@@ -35,5 +39,6 @@ export const darkTheme = {
     foreground: '#fff',
     grey: '#a9afc3;',
     muted: '#eee',
-  }
+  },
+ backgroundImage: darkBg
 };
