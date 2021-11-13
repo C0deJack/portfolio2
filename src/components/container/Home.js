@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Cta } from '../styled/Cta';
 
 const StyledHome = styled.section`
     padding: 2rem;
@@ -27,6 +28,7 @@ export const Home = () => {
             <div className="line"></div>
             <span>WEB DEVELOPER</span>
             <h1>Jack Wood-Pearce</h1>
+            <Cta href="../../../Jack Wood-Pearce CV.pdf" text="Download CV" openNewWindow={true} />
         </StyledHome>
     )
 }

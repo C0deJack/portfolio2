@@ -11,10 +11,10 @@ export const lightTheme = {
     }
   },
   color: {
-    primary: '#0E1C75', // dark blue
-    secondary: '#E21266', // magenta
-    warning: '#FCDA00', // yellow
-    info: '#00CCC6', // teal
+    primary: '#f15025',
+    secondary: '#E21266',
+    warning: '#FCDA00',
+    info: '#00CCC6',
     background: '#eaeaea',
     foreground: '#282828',
     grey: '#bdbdbd',
@@ -27,12 +27,12 @@ export const darkTheme = {
   // Make properties the same on both to force both themes to be consistent
   all: { ...lightTheme.all },
   color: {
-    primary: '#0E1C75', // dark blue
-    secondary: '#E21266', // magenta
-    warning: '#FCDA00', // yellow
-    info: '#00CCC6', // teal
-    background: '#000',
-    foreground: '#dadada',
+    primary: '#f15025',
+    secondary: '#E21266',
+    warning: '#FCDA00',
+    info: '#00CCC6',
+    background: '#191b27',
+    foreground: '#fff',
     grey: '#6e6e6e',
     muted: '#eee',
   }
