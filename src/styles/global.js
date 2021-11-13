@@ -59,7 +59,7 @@ export const GlobalStyles = createGlobalStyle`
     .heroImage {
         background: url(${props => props.theme.backgroundImage}) ${props => props.theme.color.background};
         background-repeat: no-repeat;
-        background-position: top right;
+        background-position: center;
         background-size: cover;
     }
 `;

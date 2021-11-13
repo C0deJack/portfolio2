@@ -1,6 +1,6 @@
 // ====== All brand colors and brand specific styling should live here ====== //
 
-import lightBg from '../assets/backgrounds/light-bg.png';
+import lightBg from '../assets/backgrounds/tree.jpg';
 import darkBg from '../assets/backgrounds/flowers.jpg';
 
 export const lightTheme = {
@@ -19,7 +19,7 @@ export const lightTheme = {
     warning: '#FCDA00',
     info: '#00CCC6',
     background: '#f2f2f2',
-    foreground: '#282828',
+    foreground: '#000',
     grey: '#535353',
     muted: '#eee',
   }, 
