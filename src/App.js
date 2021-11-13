@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { ThemeProvider } from './components/context/ThemeContext';
+import { Header } from './components/container/Header';
+import { Home } from './components/container/Home';
+import PageOne from './components/container/Projects';
+import PageTwo from './components/container/Contact';
+import { StyledFooter } from './components/container/Footer';
+import { GlobalStyles } from './styles/global';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+export default function App() {
+    
+    return (
+      <ThemeProvider>
+          <GlobalStyles />
+            <Header /> 
+            <Router>
+                <Routes>
+                    <Route path="/" element={<Home/>} />
+                    <Route path={'/one'} element={<PageOne/>} />
+                    <Route path={'/two'} element={<PageTwo/>} />
+                    <Route element={<Home/>} />
+                </Routes>
+                <StyledFooter />
+            </Router>
+        </ThemeProvider>
+    );
 }
-
-export default App;
