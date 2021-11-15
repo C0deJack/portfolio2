@@ -6,5 +6,5 @@ export default function Projects() {
             <h2>Projects</h2>
             {/* <LinkButton link={'/'} linkName={'HOME'}/> */}
         </div>
-    )
+    );
 }

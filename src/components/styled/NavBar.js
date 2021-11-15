@@ -2,7 +2,6 @@ import Tab from './Tab';
 import styled from 'styled-components';
 
 const StyledNavBar = styled.nav`
-
     ul {
         margin: 0 5rem 0;
         display: flex;
@@ -18,5 +17,5 @@ export default function NavBar() {
                 <Tab link={'/two'} linkName={'contact'} />
             </ul>
         </StyledNavBar>
-    )
+    );
 }

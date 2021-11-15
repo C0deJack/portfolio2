@@ -7,20 +7,18 @@ import PageTwo from './components/container/Contact';
 import { StyledFooter } from './components/container/Footer';
 import { GlobalStyles } from './styles/global';
 
-
 export default function App() {
-    
     return (
-      <ThemeProvider>
-          <GlobalStyles />
-            <div className="heroImage">
-                <Header /> 
+        <ThemeProvider>
+            <GlobalStyles />
+            <div className='heroImage'>
+                <Header />
                 <Router>
                     <Routes>
-                        <Route path="/" element={<Home/>} />
-                        <Route path={'/one'} element={<PageOne/>} />
-                        <Route path={'/two'} element={<PageTwo/>} />
-                        <Route element={<Home/>} />
+                        <Route path='/' element={<Home />} />
+                        <Route path={'/one'} element={<PageOne />} />
+                        <Route path={'/two'} element={<PageTwo />} />
+                        <Route element={<Home />} />
                     </Routes>
                     <StyledFooter />
                 </Router>

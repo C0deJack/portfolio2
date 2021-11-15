@@ -11,7 +11,6 @@ const StyledLogo = styled.a`
         font-weight: 700;
         color: ${props => props.theme.color.foreground};
     }
-
 `;
 
 export default function Logo() {
@@ -19,5 +18,5 @@ export default function Logo() {
         <StyledLogo href='/'>
             <div>JWP</div>
         </StyledLogo>
-    )
+    );
 }

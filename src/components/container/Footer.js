@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-
-
 export const StyledFooter = styled.footer`
     display: flex;
     justify-content: space-between;
@@ -12,12 +10,6 @@ export const StyledFooter = styled.footer`
     }
 `;
 
-
-
 export const Footer = () => {
-    return (
-        <div>
-            I'm a footer test
-        </div>
-    )
-}
+    return <div>I&apos;m a footer test</div>;
+};

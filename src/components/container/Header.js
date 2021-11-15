@@ -14,7 +14,6 @@ const StyledHeader = styled.header`
 `;
 
 export const Header = () => {
-
     return (
         <StyledHeader>
             <Logo />
@@ -24,4 +23,4 @@ export const Header = () => {
             </div>
         </StyledHeader>
     );
-}
+};

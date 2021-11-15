@@ -1,5 +1,5 @@
-import React from 'react'
-import styled from "styled-components";
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const StyledTab = styled.li`
     list-style: none;
@@ -12,11 +12,15 @@ const StyledTab = styled.li`
     }
 `;
 
-
-export default function Tab(props) {
+export default function Tab({ link, linkName }) {
     return (
         <StyledTab>
-            <a href={props.link}>{props.linkName}</a>
+            <a href={link}>{linkName}</a>
         </StyledTab>
-    )
+    );
 }
+
+Tab.propTypes = {
+    link: PropTypes.string.isRequired,
+    linkName: PropTypes.string,
+};

@@ -1,5 +1,5 @@
-import React from 'react'
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const StyledLink = styled.a`
     background-color: ${({ theme }) => theme.color.secondary};
@@ -20,7 +20,8 @@ const StyledLink = styled.a`
     font-size: 1rem;
     line-height: 1.5;
     border-radius: 0.25rem;
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+        border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 
     :hover {
         background-color: ${({ theme }) => theme.color.info};
@@ -28,12 +29,11 @@ const StyledLink = styled.a`
     }
 `;
 
+export default function LinkButton({ link, linkName }) {
+    return <StyledLink href={link}>{linkName}</StyledLink>;
+}
 
-export default function LinkButton(props) {
-    return (
-        <StyledLink href={props.link}>
-            {props.linkName}
-        </StyledLink>
-    )
-} 
-
+LinkButton.propTypes = {
+    link: PropTypes.string.isRequired,
+    linkName: PropTypes.string,
+};

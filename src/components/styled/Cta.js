@@ -1,9 +1,9 @@
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const StyledCta = styled.a`
-
     display: inline-block;
-    color:  ${props => props.theme.color.foreground};
+    color: ${props => props.theme.color.foreground};
     text-decoration: none;
     height: 60px;
     line-height: 58px;
@@ -19,21 +19,30 @@ const StyledCta = styled.a`
 
     &:hover {
         background-color: ${props => props.theme.color.primary};
-        color:  ${props => props.theme.color.background};
+        color: ${props => props.theme.color.background};
     }
-
 `;
 
-
-
-export const Cta = ({href, text, openNewWindow}) => {
-
+export const Cta = ({ href, text, openNewWindow }) => {
     return (
         <>
-            {openNewWindow 
-                ? <StyledCta href={href}  target="_blank" rel="noopener noreferrer">{text}</StyledCta>
-                : <StyledCta href={href} >{text}</StyledCta>
-            }
+            {openNewWindow ? (
+                <StyledCta
+                    href={href}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                >
+                    {text}
+                </StyledCta>
+            ) : (
+                <StyledCta href={href}>{text}</StyledCta>
+            )}
         </>
-    )
-}
+    );
+};
+
+Cta.propTypes = {
+    href: PropTypes.string.isRequired,
+    text: PropTypes.string,
+    openNewWindow: PropTypes.bool,
+};
