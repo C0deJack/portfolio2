@@ -11,10 +11,7 @@ export const ThemeProvider = props => {
 
     return (
         <ThemeContext.Provider value={context}>
-            <StyledThemeProvider
-                theme={theme === 'dark' ? darkTheme : lightTheme}
-                {...props}
-            />
+            <StyledThemeProvider theme={theme === 'dark' ? darkTheme : lightTheme} {...props} />
         </ThemeContext.Provider>
     );
 };
@@ -22,10 +19,7 @@ export const ThemeProvider = props => {
 export const useTheme = () => {
     const themeContext = useContext(ThemeContext);
 
-    if (!themeContext)
-        throw new Error(
-            'useTheme can&apos;t be used witout outside of a ThemeProvider'
-        );
+    if (!themeContext) throw new Error('useTheme can&apos;t be used witout outside of a ThemeProvider');
 
     const { theme, setTheme } = themeContext;
 

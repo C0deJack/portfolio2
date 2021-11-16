@@ -38,7 +38,8 @@
                 "endOfLine": "auto",
                 "useTabs:": true,
                 "quoteProps": "consistent",
-                "arrowParens": "avoid"
+                "arrowParens": "avoid",
+                "printWidth": 120
             }
         ]
     }

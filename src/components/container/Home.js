@@ -38,15 +38,8 @@ export const Home = () => {
                 <br />
                 Wood-Pearce<span className='dot'></span>
             </h1>
-            <p className='mb-5'>
-                A creative, dedicated software engineer focussed on frontend
-                development
-            </p>
-            <Cta
-                href='../../../Jack Wood-Pearce CV.pdf'
-                text='Download CV'
-                openNewWindow={true}
-            />
+            <p className='mb-5'>A creative, dedicated software engineer focussed on frontend development</p>
+            <Cta href='../../../Jack Wood-Pearce CV.pdf' text='Download CV' openNewWindow={true} />
         </StyledHome>
     );
 };
