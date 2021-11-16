@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import Logo from '../styled/Logo';
 import NavBar from '../styled/NavBar';
 import { ThemeToggle } from '../styled/ThemeToggle';
+import Weather from '../styled/Weather';
 
 const StyledHeader = styled.header`
     display: flex;
@@ -18,6 +19,7 @@ export const Header = () => {
         <StyledHeader>
             <Logo />
             <div>
+                <Weather />
                 <NavBar />
                 <ThemeToggle />
             </div>

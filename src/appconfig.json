@@ -1,0 +1,10 @@
+{
+    "urls": {
+        "api": {
+            "weatherByCityName": "https://api.openweathermap.org/data/2.5/weather?units=metric&q="
+        }
+    },
+    "keys": {
+        "weatherApiKey": "&appid=b3570d7c912050b4c2ff3e834e945097"
+    }
+}
