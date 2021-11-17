@@ -1,12 +1,13 @@
-// import { useEffect, useState } from 'react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+// import { useState } from 'react';
 import styled from 'styled-components';
-// import getData from '../../helpers/getData';
-// import appSettings from '../../appconfig.json';
-// const settings = appSettings;
+import getData from '../../helpers/getData';
+import debounce from '../../helpers/debounce';
+import appSettings from '../../appconfig.json';
+const settings = appSettings;
 
 // Temp
-import { exampleData } from '../../helpers/exampleWeatherData';
+// import { exampleData } from '../../helpers/exampleWeatherData';
 
 const StyledWeather = styled.div`
     color: ${({ theme }) => theme.color.foreground};
@@ -23,17 +24,21 @@ const StyledWeather = styled.div`
 `;
 
 export default function Weather() {
-    // const cityName = 'London,uk';
-    // const url = `${settings.urls.api.weatherByCityName}${cityName}${settings.keys.weatherApiKey}`;
+    const cityName = 'London,uk';
+    const url = `${settings.urls.api.weatherByCityName}${cityName}${settings.keys.weatherApiKey}`;
 
-    // const [weather, setWeather] = useState('');
-    const [weather] = useState(exampleData);
+    const [weather, setWeather] = useState('');
+    // const [weather] = useState(exampleData);
 
-    // useEffect(() => {
-    //     getData(url)
-    //         .then(data => setWeather(data))
-    //         .catch(() => setWeather('')); // Hide app if error.
-    // }, []);
+    useEffect(() => {
+        debounce(
+            getData(url)
+                .then(data => setWeather(data))
+                .catch(() => setWeather('')), // Hide app if error.
+            1000,
+            true
+        );
+    }, []);
 
     return (
         <>
