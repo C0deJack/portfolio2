@@ -1,11 +1,15 @@
 import styled, { keyframes } from 'styled-components';
 import { fadeInUp } from 'react-animations';
+import IsotopeGallery from '../styled/IsotopeGallery';
 
 const fadeInUpAnimation = keyframes`${fadeInUp}`;
 
 const StyledProjects = styled.section`
     padding: 2rem;
-    max-width: 770px;
+
+    .page-content {
+        max-width: 770px;
+    }
 
     h1 {
         animation: 2s ${fadeInUpAnimation};
@@ -44,144 +48,9 @@ export default function Projects() {
                             everything at a high level.
                         </p>
                     </div>
-                    <section className='options'>
-                        <div className='option-isotop'>
-                            <ul id='filter' className='option-set filters-nav' data-option-key='filter'>
-                                <li>
-                                    <a data-option-value='*' className='selected'>
-                                        All
-                                    </a>
-                                </li>
-                                <li>
-                                    <a data-option-value='.typeScript'>TypeScript</a>
-                                </li>
-                                <li>
-                                    <a data-option-value='.javaScript'>JavaScript</a>
-                                </li>
-                                <li>
-                                    <a data-option-value='.nodejs'>Node.js</a>
-                                </li>
-                                <li>
-                                    <a data-option-value='.react'>React</a>
-                                </li>
-                                <li>
-                                    <a data-option-value='.jquery'>JQuery</a>
-                                </li>
-                                <li>
-                                    <a data-option-value='.blazor'>C# Blazor</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </section>
-                    <div className='masonary-layout'>
-                        <div className='row'>
-                            <div className='masonary'>
-                                <div className='col-lg-4 col-md-6 col-sm-6 javaScript react'>
-                                    <div className='tema-col'>
-                                        <img src='images/projects/lna.png' alt='' />
-                                        <div className='team-caption'>
-                                            <h3>
-                                                <a href='case-work.html' title=''>
-                                                    Maria Yaltekee
-                                                </a>
-                                            </h3>
-                                            <span>Graphic Designer</span>
-                                            <a href='case-work.html' title='' className=''>
-                                                <img src='images/arrow-right.svg' alt='' />
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className='col-lg-4 col-md-6 col-sm-6 react blazor'>
-                                    <div className='tema-col'>
-                                        <img src='images/projects/lna.png' alt='' />
-                                        <div className='team-caption'>
-                                            <h3>
-                                                <a href='case-work.html' title=''>
-                                                    Maria Yaltekee
-                                                </a>
-                                            </h3>
-                                            <span>Graphic Designer</span>
-                                            <a href='case-work.html' title='' className=''>
-                                                <img src='images/arrow-right.svg' alt='' />
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className='col-lg-4 col-md-6 col-sm-6 jquery typeScript nodejs'>
-                                    <div className='tema-col'>
-                                        <img src='images/projects/lna.png' alt='' />
-                                        <div className='team-caption'>
-                                            <h3>
-                                                <a href='case-work.html' title=''>
-                                                    Maria Yaltekee
-                                                </a>
-                                            </h3>
-                                            <span>Graphic Designer</span>
-                                            <a href='case-work.html' title='' className=''>
-                                                <img src='images/arrow-right.svg' alt='' />
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className='col-lg-4 col-md-6 col-sm-6 blazor jquery nodejs'>
-                                    <div className='tema-col'>
-                                        <img src='images/projects/lna.png' alt='' />
-                                        <div className='team-caption'>
-                                            <h3>
-                                                <a href='case-work.html' title=''>
-                                                    Maria Yaltekee
-                                                </a>
-                                            </h3>
-                                            <span>Graphic Designer</span>
-                                            <a href='case-work.html' title='' className=''>
-                                                <img src='images/arrow-right.svg' alt='' />
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className='col-lg-4 col-md-6 col-sm-6 jquery apps nodejs'>
-                                    <div className='tema-col'>
-                                        <img src='images/projects/lna.png' alt='' />
-                                        <div className='team-caption'>
-                                            <h3>
-                                                <a href='case-work.html' title=''>
-                                                    Maria Yaltekee
-                                                </a>
-                                            </h3>
-                                            <span>Graphic Designer</span>
-                                            <a href='case-work.html' title='' className=''>
-                                                <img src='images/arrow-right.svg' alt='' />
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className='col-lg-4 col-md-6 col-sm-6 typescript apps'>
-                                    <div className='tema-col'>
-                                        <img src='images/projects/lna.png' alt='' />
-                                        <div className='team-caption'>
-                                            <h3>
-                                                <a href='case-work.html' title=''>
-                                                    Maria Yaltekee
-                                                </a>
-                                            </h3>
-                                            <span>Graphic Designer</span>
-                                            <a href='case-work.html' title='' className=''>
-                                                <img src='images/arrow-right.svg' alt='' />
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className='full-div w-100 text-center mt-70'>
-                                <a href='#' title='' className='btn-default'>
-                                    Load more
-                                </a>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
+            <IsotopeGallery />
         </StyledProjects>
     );
 }
