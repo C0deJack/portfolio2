@@ -4,11 +4,13 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 const StyledGalleryCard = styled.div`
-    background-color: lime;
-    width: 300px;
-    height: 400px;
-    margin: 1rem;
-    padding: 1rem;
+    .card {
+        background-color: lime;
+        width: 300px;
+        height: 400px;
+        margin: 1rem;
+        padding: 1rem;
+    }
 
     h3 {
         color: ${props => props.theme.color.foreground};
@@ -24,9 +26,29 @@ export default function GalleryCard({ projectTitle }) {
         });
     };
 
+    const handleOnHover = isMouseHovering => {
+        const rotation = isMouseHovering ? 180 : 0;
+
+        gsap.to(boxRef.current, {
+            rotationY: rotation,
+            duration: 1,
+            ease: 'back.out(1.7)',
+        });
+    };
+
     return (
-        <StyledGalleryCard className='card' ref={boxRef} onClick={handleClick}>
-            <h3>{projectTitle}</h3>
+        <StyledGalleryCard
+            onClick={handleClick}
+            onMouseEnter={() => {
+                handleOnHover(true);
+            }}
+            onMouseLeave={() => {
+                handleOnHover(false);
+            }}
+        >
+            <div className='card' ref={boxRef}>
+                <h3>{projectTitle}</h3>
+            </div>
         </StyledGalleryCard>
     );
 }
