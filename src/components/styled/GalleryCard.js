@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react';
+import { useRef } from 'react';
 import gsap from 'gsap';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
@@ -8,20 +8,27 @@ const StyledGalleryCard = styled.div`
     width: 300px;
     height: 400px;
     margin: 1rem;
-    /* transform-style: preserve-3d; */
+
+    .card-container {
+        transform-style: preserve-3d;
+    }
 
     .card {
         position: absolute;
-        /* backface-visibility: hidden; */
-        background-color: lime;
+        backface-visibility: hidden;
         width: 300px;
         height: 400px;
         margin: 1rem;
         padding: 1rem;
     }
 
+    .front {
+        background-color: ${props => props.theme.color.background};
+    }
+
     .back {
-        background-color: blue;
+        background-color: ${props => props.theme.color.background};
+        transform: rotateY(180deg);
     }
 
     h3 {
@@ -33,28 +40,26 @@ export default function GalleryCard({ projectTitle }) {
     const frontRef = useRef();
     const backRef = useRef();
 
-    const handleClick = () => {
-        gsap.to(frontRef.current, {
-            rotationY: 180,
+    const rotateElementAboutY = (element, toFront) => {
+        const rotation = toFront ? 180 : 0;
+
+        gsap.to(element, {
+            rotationY: rotation,
             duration: 1,
             ease: 'back.out(1.7)',
         });
     };
 
-    useEffect(() => {
-        gsap.set(backRef.current, {
-            rotationY: 180,
-        });
-    }, []);
+    const handleClick = () => {
+        // TODO - handle touch devices.
+    };
 
     const handleOnHover = isMouseHovering => {
-        const rotation = isMouseHovering ? 180 : 0;
+        const rotateToBack = isMouseHovering;
+        const rotateToFront = !rotateToBack;
 
-        gsap.to([frontRef.current, backRef.current], {
-            rotationY: rotation,
-            duration: 1,
-            ease: 'back.out(1.7)',
-        });
+        rotateElementAboutY(frontRef.current, rotateToBack);
+        rotateElementAboutY(backRef.current, rotateToFront);
     };
 
     return (
@@ -67,11 +72,13 @@ export default function GalleryCard({ projectTitle }) {
                 handleOnHover(false);
             }}
         >
-            <div className='card front' ref={frontRef}>
-                <h3>{projectTitle} FRONT</h3>
-            </div>
-            <div className='card back' ref={backRef}>
-                <h3>{projectTitle} BACK</h3>
+            <div className='card-container'>
+                <div className='card front' ref={frontRef}>
+                    <h3>{projectTitle} FRONT</h3>
+                </div>
+                <div className='card back' ref={backRef}>
+                    <h3>{projectTitle} BACK</h3>
+                </div>
             </div>
         </StyledGalleryCard>
     );
