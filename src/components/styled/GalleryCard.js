@@ -1,7 +1,8 @@
 import { useRef } from 'react';
 import gsap from 'gsap';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
+import Card from './Card';
 
 const StyledGalleryCard = styled.div`
     position: relative;
@@ -11,28 +12,6 @@ const StyledGalleryCard = styled.div`
 
     .card-container {
         transform-style: preserve-3d;
-    }
-
-    .card {
-        position: absolute;
-        backface-visibility: hidden;
-        width: 300px;
-        height: 400px;
-        margin: 1rem;
-        padding: 1rem;
-    }
-
-    .front {
-        background-color: ${props => props.theme.color.background};
-    }
-
-    .back {
-        background-color: ${props => props.theme.color.background};
-        transform: rotateY(180deg);
-    }
-
-    h3 {
-        color: ${props => props.theme.color.foreground};
     }
 `;
 
@@ -73,17 +52,13 @@ export default function GalleryCard({ projectTitle }) {
             }}
         >
             <div className='card-container'>
-                <div className='card front' ref={frontRef}>
-                    <h3>{projectTitle} FRONT</h3>
-                </div>
-                <div className='card back' ref={backRef}>
-                    <h3>{projectTitle} BACK</h3>
-                </div>
+                <Card passedRef={frontRef} projectTitle={projectTitle} isBackSide={false} />
+                <Card passedRef={backRef} projectTitle={projectTitle} isBackSide={true} />
             </div>
         </StyledGalleryCard>
     );
 }
 
 GalleryCard.propTypes = {
-    projectTitle: PropTypes.string.isRequired,
+    projectTitle: propTypes.string.isRequired,
 };
