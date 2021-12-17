@@ -2,7 +2,9 @@ import { useRef } from 'react';
 import gsap from 'gsap';
 import styled from 'styled-components';
 import propTypes from 'prop-types';
-import Card from './Card';
+// import Card from './Card';
+import CardFront from './CardFront';
+import CardBack from './CardBack';
 
 const StyledGalleryCard = styled.div`
     position: relative;
@@ -15,7 +17,7 @@ const StyledGalleryCard = styled.div`
     }
 `;
 
-export default function GalleryCard({ projectTitle }) {
+export default function GalleryCard({ projectTitle, image }) {
     const frontRef = useRef();
     const backRef = useRef();
 
@@ -52,8 +54,10 @@ export default function GalleryCard({ projectTitle }) {
             }}
         >
             <div className='card-container'>
-                <Card passedRef={frontRef} projectTitle={projectTitle} isBackSide={false} />
-                <Card passedRef={backRef} projectTitle={projectTitle} isBackSide={true} />
+                {/* <Card passedRef={frontRef} projectTitle={projectTitle} isBackSide={false} /> */}
+                {/* <Card passedRef={backRef} projectTitle={projectTitle} isBackSide={true} /> */}
+                <CardFront passedRef={frontRef} image={image} />
+                <CardBack passedRef={backRef} projectTitle={projectTitle} />
             </div>
         </StyledGalleryCard>
     );
@@ -61,4 +65,5 @@ export default function GalleryCard({ projectTitle }) {
 
 GalleryCard.propTypes = {
     projectTitle: propTypes.string.isRequired,
+    image: propTypes.string,
 };

@@ -2,6 +2,7 @@ import { useRef, useEffect, useState } from 'react';
 import Isotope from 'isotope-layout';
 import styled from 'styled-components';
 import GalleryCard from './GalleryCard';
+import lnaImg from '../../assets/projects/lna-front-mbl.png';
 
 const StyledIsotopeGallery = styled.section`
     ul {
@@ -105,7 +106,7 @@ export default function IsotopeGallery() {
 
             <ul className='filtered-container'>
                 <li className='filter-item typeScript'>
-                    <GalleryCard projectTitle='typeScript' />
+                    <GalleryCard projectTitle='typeScript' image={lnaImg} />
                 </li>
                 <li className='filter-item typeScript jquery'>
                     <GalleryCard projectTitle='typeScript jquery' />
