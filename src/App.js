@@ -4,6 +4,7 @@ import { Header } from './components/container/Header';
 import { Home } from './components/container/Home';
 import Projects from './components/container/Projects';
 import Contact from './components/container/Contact';
+import NotFound from './components/container/NotFound';
 import { StyledFooter } from './components/container/Footer';
 import { GlobalStyles } from './styles/global';
 
@@ -15,10 +16,10 @@ export default function App() {
                 <Header />
                 <Router>
                     <Routes>
-                        <Route path='/' element={<Home />} />
-                        <Route path={'/projects'} element={<Projects />} />
-                        <Route path={'/contact'} element={<Contact />} />
-                        <Route element={<Home />} />
+                        <Route exact path='/' element={<Home />} />
+                        <Route exact path={'/projects'} element={<Projects />} />
+                        <Route exact path={'/contact'} element={<Contact />} />
+                        <Route path='*' element={<NotFound />} />
                     </Routes>
                     <StyledFooter />
                 </Router>

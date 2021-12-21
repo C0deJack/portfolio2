@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 /// <reference types="cypress" />
 
-describe('<NavBar />', () => {
+describe('Site Navigation', () => {
     beforeEach(() => {
         cy.visit('http://localhost:3000/');
     });
@@ -14,5 +14,15 @@ describe('<NavBar />', () => {
     it('navigates to the contact page', () => {
         cy.contains('contact').click();
         cy.url().should('include', 'contact');
+    });
+
+    it('navigates to the home page', () => {
+        cy.contains('home').click();
+        cy.url().should('be.equal', `${Cypress.config('baseUrl')}`);
+    });
+
+    it('logo navigates to the home page', () => {
+        cy.contains('JWP').click();
+        cy.url().should('be.equal', `${Cypress.config('baseUrl')}`);
     });
 });

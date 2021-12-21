@@ -15,7 +15,9 @@ const StyledTab = styled.li`
 export default function Tab({ link, linkName }) {
     return (
         <StyledTab>
-            <a href={link}>{linkName}</a>
+            <a href={link} title={`go to ${linkName} page`} aria-label={linkName}>
+                {linkName}
+            </a>
         </StyledTab>
     );
 }

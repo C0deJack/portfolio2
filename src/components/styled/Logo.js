@@ -15,8 +15,10 @@ const StyledLogo = styled.a`
 
 export default function Logo() {
     return (
-        <StyledLogo href='/'>
-            <div>JWP</div>
+        <StyledLogo href='/' aria-label='Home'>
+            <div aria-label='Logo' title='Jack Wood-Pearce | Web developer'>
+                JWP
+            </div>
         </StyledLogo>
     );
 }
