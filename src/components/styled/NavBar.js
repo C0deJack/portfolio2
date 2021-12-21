@@ -13,8 +13,8 @@ export default function NavBar() {
         <StyledNavBar>
             <ul role='navigation'>
                 <Tab link={'/'} linkName={'home'} />
-                <Tab link={'/one'} linkName={'projects'} />
-                <Tab link={'/two'} linkName={'contact'} />
+                <Tab link={'/projects'} linkName={'projects'} />
+                <Tab link={'/contact'} linkName={'contact'} />
             </ul>
         </StyledNavBar>
     );
