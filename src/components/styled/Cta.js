@@ -27,7 +27,7 @@ export const Cta = ({ href, text, openNewWindow }) => {
     return (
         <>
             {openNewWindow ? (
-                <StyledCta href={href} target='_blank' rel='noopener noreferrer'>
+                <StyledCta href={href} data-cy='cvDownload' target='_blank' rel='noopener noreferrer'>
                     {text}
                 </StyledCta>
             ) : (
