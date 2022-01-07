@@ -4,8 +4,8 @@ import propTypes from 'prop-types';
 const StyledCardFront = styled.div`
     position: absolute;
     backface-visibility: hidden;
-    width: 300px;
-    height: 400px;
+    width: 100%;
+    height: 100%;
 
     img {
         width: 100%;

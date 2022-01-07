@@ -6,18 +6,22 @@ import propTypes from 'prop-types';
 import CardFront from './CardFront';
 import CardBack from './CardBack';
 
+// 0.5622188906
+
 const StyledGalleryCard = styled.div`
     position: relative;
     width: 300px;
-    height: 400px;
+    height: 534px;
     margin: 1rem;
-
-    .card-container {
-        transform-style: preserve-3d;
-    }
 `;
 
-export default function GalleryCard({ projectTitle, image }) {
+const StyledCardContainer = styled.div`
+    transform-style: preserve-3d;
+    width: 100%;
+    height: 100%;
+`;
+
+export default function GalleryCard({ projectTitle, projectDesc, image }) {
     const frontRef = useRef();
     const backRef = useRef();
 
@@ -53,17 +57,16 @@ export default function GalleryCard({ projectTitle, image }) {
                 handleOnHover(false);
             }}
         >
-            <div className='card-container'>
-                {/* <Card passedRef={frontRef} projectTitle={projectTitle} isBackSide={false} /> */}
-                {/* <Card passedRef={backRef} projectTitle={projectTitle} isBackSide={true} /> */}
+            <StyledCardContainer>
                 <CardFront passedRef={frontRef} image={image} />
-                <CardBack passedRef={backRef} projectTitle={projectTitle} />
-            </div>
+                <CardBack passedRef={backRef} projectTitle={projectTitle} projectDesc={projectDesc} />
+            </StyledCardContainer>
         </StyledGalleryCard>
     );
 }
 
 GalleryCard.propTypes = {
     projectTitle: propTypes.string.isRequired,
+    projectDesc: propTypes.string.isRequired,
     image: propTypes.string,
 };
